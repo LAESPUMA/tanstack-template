@@ -24,14 +24,11 @@ if (process.env.SENTRY_AUTH_TOKEN) {
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    allowedHosts: [
-      "localhost",
-      "devserver-preview--carwashlaespuma.netlify.app",
-    ],
+    allowedHosts: "all",
   },
   plugins: basePlugins,
   build: {
-    // Only generate source maps if Sentry is enabled
     sourcemap: !!process.env.SENTRY_AUTH_TOKEN,
   },
 });
+
